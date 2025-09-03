@@ -4,10 +4,10 @@
 using namespace std;
 
 struct DataFloat {
-    private:
+    public:
         float number;
         float error;
-    public:
+
         DataFloat (): number{0}, error{0}{ }
         DataFloat (float n){
             this->number = n, this->error = 0;
@@ -78,13 +78,12 @@ struct DataFloat {
             error = df.error; 
             return *this;
         }
-        DataFloat functionVar5(DataFloat x, DataFloat y, DataFloat z){
-            DataFloat a, b, c, d(12), f;
-            a.number = log(x.error);
-            a.error = x.error/(x.number-x.error);
-            b = y + z;
-            c = a * b;
-            f = c / d;
-            return f;
-        }
 };
+
+DataFloat functionVar5(DataFloat x, DataFloat y, DataFloat z){
+    DataFloat a{log(x.error), x.error/(x.number-x.error)}, b, c, d(12), f;
+    b = y + z;
+    c = a * b;
+    f = c / d;
+    return f;
+}

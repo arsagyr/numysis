@@ -18,11 +18,18 @@ void Exer1(){
 }
 
 void Exer2(){
-    float x, y, z;
+    DataFloat x, y, z, f;
+    cout << " Input three numbers" << endl;
+    x.input();
+    y.input();
+    z.input();
+    f = functionVar5(x, y, z);
+    f.print();
     
 }
 
 int main(){
     Exer1();
+    Exer2();
     return 0;
 }
