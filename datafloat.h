@@ -40,16 +40,23 @@ struct DataFloat {
         void printsError(){
             cout << this->number << endl;
         }
-        DataFloat operator + (const DataFloat& df) const{
+        DataFloat operator + (DataFloat df) {
+            cout << this->number + df.number << endl;
                 return DataFloat(this->number + df.number, this->error + df.error);
             }
-        DataFloat operator - (const DataFloat& df) const{
+        DataFloat operator - (DataFloat df) {
             return DataFloat(this->number - df.number, this->error + df.error);
         }
-        DataFloat operator * (const DataFloat& df) const{
+        DataFloat operator * (DataFloat df) {
             return DataFloat(this->number * df.number, this->error * df.number + this->number * df.error + this->error * df.error);
         }
-        DataFloat operator / (const DataFloat& df) const{
+        DataFloat operator / (DataFloat df)  {
             return DataFloat(this->number / df.number, abs(this->error * df.number - this->number * df.error) / df.number / (df.number - df.error));
+        }
+        DataFloat& operator = (DataFloat df){
+            cout <<df.number  << endl;
+            number = df.number;
+            error = df.error; 
+            return *this;
         }
 };
