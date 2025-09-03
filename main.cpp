@@ -10,9 +10,17 @@ void Exer1(){
     cout << "Input the second number" << endl;
     b.input();
     c = a + b;
-    c.print();
+    cout << "a + b has a number part as "; c.printNumber(); cout << ", error as "; c.printsError(); cout << endl;
+    c = a * b;
+    cout << "a * b has a number part as "; c.printNumber(); cout << ", error as "; c.printsError(); cout << endl;
+    c = a / b;
+    cout << "a / b has a number part as "; c.printNumber(); cout << ", error as "; c.printsError(); cout << endl;
 }
 
+void Exer2(){
+    float x, y, z;
+    
+}
 
 int main(){
     Exer1();
