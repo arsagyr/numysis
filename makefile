@@ -1,3 +1,4 @@
-ALL:
+all:
 	g++ main.cpp -o a.exe && ./a.exe
-CLEAR:
+clear:
+	rm -rf *.exe 
