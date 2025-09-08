@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"numysis/error"
 	"numysis/polynom"
 )
 
@@ -14,4 +15,5 @@ func main() {
 		Coefficients: s,
 	}
 	fmt.Println(p.GetSum())
+	error.Cos2Xerror(-0.75, 10, 0.000001)
 }
